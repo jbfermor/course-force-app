@@ -1,3 +1,9 @@
 <h1>Landing Page</h1>
 
-<%= link_to "Privacy policy", static_pages_privacy_policy_path %>
+
+
+<%= link_to static_pages_privacy_policy_path,
+class: "btn btn-lg btn-warning" do %>
+  <i class="fas fa-file-word"></i>
+  Privacy Policy
+<% end %>
