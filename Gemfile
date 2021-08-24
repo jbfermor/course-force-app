@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'haml', '~> 5.2', '>= 5.2.2'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'faker'
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
