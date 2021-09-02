@@ -13,6 +13,36 @@
             %button.btn.btn-primary.btn-sm{:type => "submit"}
               %span.fa.fa-search{"aria-hidden" => "true"}
 
+.card-group 
+  .card.card-body 
+    %h1
+      .fa.fa-graduation-cap 
+    = Course.count
+    online courses 
+    .row 
+    Explore a variety of fresh topics 
+  .card.card-body 
+    %h1
+      .fa.fa-chalkboard-teacher
+    = Course.distinct.count(:user_id)
+    expert instructors
+    .row 
+    Find the right instuctor for you  
+  .card.card-body 
+    %h1
+      .fa.fa-user-graduate 
+    = User.count
+    active learners 
+    .row 
+    Join the knowledge sharing community
+  .card.card-body 
+    %h1
+      .fa.fa-infinity 
+    lifitime access
+    .row 
+    Learn your own schedule
+
+
 %hr
 %h2
   Popular courses
@@ -27,9 +57,8 @@
     = render 'courses/course', course: course
 %hr
 %h2
-  Most recent courses
+  Latest courses
 .row.row-cols-sm-2.row-cols-md-3.row-cols-lg-4.g-3
-  - @courses.each do |course|
+  - @latest_courses.each do |course|
     = render 'courses/course', course: course
 %hr
-

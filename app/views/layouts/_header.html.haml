@@ -28,6 +28,13 @@
             = link_to courses_path, class: 'nav-link' do
               .fa.fa-book 
               Courses
+          %li.nav-item{
+            class: "#{'active font-weight-bold' if current_page?(new_course_path)}"
+          }
+            = link_to new_course_path, class: 'nav-link' do
+              .fa.fa-plus 
+              New Course
+
         .form-inline.my-2.my-lg-0 
           =form_tag(courses_path, method: :get) do 
             .input-group 
@@ -38,6 +45,7 @@
               %span.input-group-append
                 %button.btn.btn-primary.btn-sm{:type => "submit"}
                   %span.fa.fa-search{"aria-hidden" => "true"}
+        
         %ul.navbar-nav.mr-right
           %li.nav-item{
             class: "#{'active font-weight-bold' if current_page?(root_path)}"
@@ -61,7 +69,7 @@
               class: "dropdown-item" do
                 .fa.fa-cog
                 %b Account settings 
-              = link_to destroy_user_session_path,
+              = link_to destroy_user_session_path, method: :delete,
               class: "dropdown-item" do
                 .fa.fa-sign-out-alt
                 %b Sign out 
