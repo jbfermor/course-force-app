@@ -23,6 +23,12 @@
               .fa.fa-home
               Home
           %li.nav-item{
+            class: "#{'active font-weight-bold' if current_page?(users_path)}"
+          }
+            = link_to users_path, class: 'nav-link' do
+              .fa.fa-user
+              Users
+          %li.nav-item{
             class: "#{'active font-weight-bold' if current_page?(courses_path)}"
           }
             = link_to courses_path, class: 'nav-link' do
