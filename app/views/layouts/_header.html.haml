@@ -83,6 +83,10 @@
               class: "dropdown-item" do
                 .fa.fa-cog
                 %b Account settings 
+              = link_to home_activity_path,
+              class: "dropdown-item" do
+                .fa.fa-bell
+                %b Activity 
               = link_to destroy_user_session_path, method: :delete,
               class: "dropdown-item" do
                 .fa.fa-sign-out-alt
