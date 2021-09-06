@@ -17,5 +17,18 @@ class Course < ApplicationRecord
   has_rich_text :description
 
   belongs_to :user
+
+  LANGUAGES = [:"English", :"Spanish", :"Russian"]
+  LEVELS = [:"Beginner", :"Intermediate", :"Advanced"]
+
+  def self.languages 
+    LANGUAGES.map { |language| [language, language] } 
+  end
+
+  def self.levels 
+    LEVELS.map { |level| [level, level] }
+  end
+
+
  
 end
