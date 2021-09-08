@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :courses
-  resources :users, only: [:index]
+  resources :users, except: [:delete]
   root 'home#index'
   get 'home/activity'
   get 'static_pages/privacy_policy'

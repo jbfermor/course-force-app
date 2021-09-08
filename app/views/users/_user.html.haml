@@ -30,5 +30,11 @@
     - else 
       .badge.bg-danger
         No
+  .card-footer 
+    - user.roles.each do |role|
+      .badge.bg-info
+        = role.name
+    = link_to 'Edit roles', edit_user_path(user),
+    class:'btn btn-sm btn-warning'
 
 
