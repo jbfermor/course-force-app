@@ -1,0 +1,21 @@
+%hr 
+%footer 
+  .cointainer 
+    .row 
+      .col-md-4
+        Copyright
+        @
+        = Time.now.year 
+        Course Force Spain 
+        .row 
+        .fa.fa-envelope 
+        =mail_to 'admin@ejemplo.com'
+        .row 
+      .col-md-4 
+        Privacy Policy 
+        .row 
+        Terms and conditions 
+      .col-md-4 
+        About us 
+        .row 
+        =link_to 'Teach on Course Force', new_course_path

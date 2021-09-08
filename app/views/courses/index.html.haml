@@ -1,9 +1,10 @@
 %h1 
-  Courses:
-  = @courses.count
+  Courses
+  .badge.bg-info
+    = @courses.count
 
 .row 
-  .col-md-2 
+  .col-3
     /=search_form_for @q  
     = search_form_for @ransack_courses, 
     as: :courses_search, url: :courses do |f|
@@ -21,7 +22,7 @@
       .ml-2
       = link_to courses_path, class: 'btn btn-sm btn-secondary' do 
         .fa.fa-sync
-  .col-md-10
+  .col-md-9
     .row.row-cols-sm-2.row-cols-md-3.row-cols-lg-4.g-3
       - @courses.each do |course|
         = render 'courses/course', course: course
