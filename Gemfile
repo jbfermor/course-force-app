@@ -37,6 +37,7 @@ gem 'friendly_id'
 gem 'ransack'
 gem 'public_activity'
 gem 'rolify'
+gem 'pundit'
 
 
 group :development, :test do

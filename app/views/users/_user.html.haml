@@ -1,7 +1,7 @@
 .card 
   .card-header 
     .fa.fa-user 
-    = user.email 
+    = link_to user.email, user_path(user)
   .card-footer
     Signed up 
     = time_ago_in_words(user.created_at) 
@@ -35,6 +35,6 @@
       .badge.bg-info
         = role.name
     = link_to 'Edit roles', edit_user_path(user),
-    class:'btn btn-sm btn-warning'
+    class:'btn btn-sm btn-warning' if policy(user).edit?
 
 
