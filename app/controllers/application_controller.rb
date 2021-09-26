@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
 
   include PublicActivity::StoreController
+
+  # Pagy
+  include Pagy::Backend
   
   #pundit
   include Pundit 
