@@ -1,3 +1,10 @@
+- content_for :title do 
+  CourseForce 
+  \|
+  = @lesson.course.title 
+  \|
+  =@lesson.title
+
 %p#notice= notice
 
 %nav{"aria-label" => "breadcrumb"}
