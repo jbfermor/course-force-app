@@ -6,6 +6,10 @@ class LessonPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    @record.course.user_id == @user.id
+  end
+
   def edit?
     @record.course.user_id == @user.id
   end
