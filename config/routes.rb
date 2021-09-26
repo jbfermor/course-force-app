@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  resources :courses
+  resources :courses do
+    resources :lessons
+  end
   resources :users, except: [:delete]
   root 'home#index'
   get 'home/activity'

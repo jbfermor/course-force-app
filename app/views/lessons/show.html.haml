@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%nav{"aria-label" => "breadcrumb"}
+  %ol.breadcrumb
+    %li.breadcrumb-item
+      = link_to "Courses", courses_path
+    %li.breadcrumb-item
+      = link_to @lesson.course.title, course_path(@lesson.course)
+    %li.breadcrumb-item.active{"aria-current" => "page"}
+      = @lesson.title
+
+= render 'lessons/lesson', lesson: @lesson
+
+= link_to "Back to #{@lesson.course.title}", course_path(@lesson.course)

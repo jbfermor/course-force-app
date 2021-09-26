@@ -20,6 +20,7 @@ class Course < ApplicationRecord
   has_rich_text :description
 
   belongs_to :user
+  has_many :lessons, dependent: :destroy
 
   LANGUAGES = [:"English", :"Spanish", :"Russian"]
   LEVELS = [:"Beginner", :"Intermediate", :"Advanced"]

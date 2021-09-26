@@ -5,5 +5,14 @@
     %li.breadcrumb-item.active{"aria-current" => "page"}
       = @course.title
 
-=render 'courses/course', course: @course
+.row 
+  .col-6
+    = render 'courses/course', course: @course
+  .col-6
+    - if policy(@course).edit?
+      = link_to 'Add lesson', new_course_lesson_path(@course, @lesson),
+      class: 'btn btn-sm btn-success'
+
+    - @lessons.each do |lesson|
+      = render 'lessons/lesson', lesson: lesson
 

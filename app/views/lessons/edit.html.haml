@@ -1,0 +1,7 @@
+.card 
+  .card-header
+    %h1 Editing lesson
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to 'Back', course_path(@lesson.course)
