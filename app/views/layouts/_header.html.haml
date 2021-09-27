@@ -40,6 +40,12 @@
             = link_to new_course_path, class: 'nav-link' do
               .fa.fa-plus 
               New Course
+          %li.nav-item{
+            class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"
+          }
+            = link_to enrollments_path, class: 'nav-link' do
+              .fa.fa-lock-open
+              Enrollments
 
         = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
           .input_group 

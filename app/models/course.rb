@@ -21,6 +21,7 @@ class Course < ApplicationRecord
 
   belongs_to :user
   has_many :lessons, dependent: :destroy
+  has_many :enrollments
 
   LANGUAGES = [:"English", :"Spanish", :"Russian"]
   LEVELS = [:"Beginner", :"Intermediate", :"Advanced"]
@@ -31,6 +32,10 @@ class Course < ApplicationRecord
 
   def self.levels 
     LEVELS.map { |level| [level, level] }
+  end
+
+  def to_s 
+    title
   end
 
 

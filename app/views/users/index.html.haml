@@ -14,28 +14,28 @@
   = f.submit 
   = link_to users_path, class: 'btn btn-sm btn-secondary' do 
     .fa.fa-sync
-
-%table.table.table-bordered
-  %head  
-    %tr 
-      %th id 
-      %th= sort_link(@q, :email) 
-      %th Created at
-      %th Sign in count 
-      %th Current sign in 
-      %th Last sign in at
-      %th Current sign in ip 
-      %th Last sign in ip 
-    %tbody 
-      - @users.each do |user|
-        %tr 
-          %td= user.id 
-          %td= user.email 
-          %td= user.created_at 
-          %td= user.sign_in_count 
-          %td= user.current_sign_in_at 
-          %td= user.last_sign_in_at 
-          %td= user.current_sign_in_ip 
-          %td= user.last_sign_in_ip 
+.table-responsive
+  %table.table.table-bordered.table-striped.table-sm
+    %head  
+      %tr 
+        %th id 
+        %th= sort_link(@q, :email) 
+        %th Created at
+        %th Sign in count 
+        %th Current sign in 
+        %th Last sign in at
+        %th Current sign in ip 
+        %th Last sign in ip 
+      %tbody 
+        - @users.each do |user|
+          %tr 
+            %td= user.id 
+            %td= user.email 
+            %td= user.created_at 
+            %td= user.sign_in_count 
+            %td= user.current_sign_in_at 
+            %td= user.last_sign_in_at 
+            %td= user.current_sign_in_ip 
+            %td= user.last_sign_in_ip 
 
   
